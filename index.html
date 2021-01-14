@@ -1,0 +1,853 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="css/style-starter.css"> -->
+    <!-- Custom-Files -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- Bootstrap-Core-CSS -->
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+    <!-- Style-CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <!-- font-awesome-icons -->
+    <link href="css/font-awesome.css" rel="stylesheet">
+
+    <!-- /Fonts -->
+    <!-- <link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800" rel="stylesheet"> -->
+
+
+    <title>Nativo</title>
+    <style>
+    /* body{
+    background: -webkit-linear-gradient(to right, #ec2F4B, #009FFF);
+    background: linear-gradient(to right, #ec2F4B, #009FFF);
+    } */
+    /* Para un comportamiento responsive */
+    .carousel-inner img {
+    width: 100%;
+    height: 100%;
+    }
+
+  </style>
+  </head>
+
+
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">Nativo</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+
+              <li class="nav-item">
+                <a class="nav-link" href="#cursos">Cursos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#Quienes som">Quienes somos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#FAQ">FAQ</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contacto">Contacto</a>
+              </li>
+
+              <!-- <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+              </li> -->
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+  </div>
+      </div>
+  </nav>
+
+<!-- modalContentView -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel"> <b>Agenda tu clase gratis</b> <br> ¡Dejanos tus datos, dinos en cual curso estas interesado, nosotros nos comunicamos!</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="name" class="col-form-label">Nombre completo:</label>
+                <input type="text" id="name" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="mail" class="col-form-label">Correo electronico:</label>
+                <input type="text" id="mail" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="phone" class="col-form-label">Telefono:</label>
+                <input type="text" id="phone" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="message" class="col-form-label">Mensaje:</label>
+                <textarea id="message" class="form-control" placeholder="Ejemplo: ¿Podrían llamarme?, estoy interesado en..." ></textarea>
+              </div>
+            </form>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-info" data-dismiss="modal" id="button" onclick="enviar()">Enviar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+        <div id="carousel1" class="carousel slide" data-ride="carousel">
+
+            <div class="carousel-inner">
+
+            <div class="carousel-item active">
+               <img src="img/TOEFLIBT.png" alt="" width="1920" height="640">
+               <div class="carousel-caption d-none d-md-block">
+               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Clase gratis</button>
+               </div>
+
+            </div>
+
+            <div class="carousel-item">
+               <img src="img/IELS.png" alt="" width="1920" height="640">
+
+               <!--text in carrusel-->
+               <!-- <img src="..." alt="..."> -->
+               <div class="carousel-caption d-none d-md-block">
+                 <!-- <h5>Inscribete</h5> -->
+                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Clase gratis</button>
+               </div>
+
+
+            </div>
+
+            <div class="carousel-item">
+               <img src="img/GRE.png" alt="" width="1920" height="640">
+               <!--text in carrusel-->
+               <!-- <img src="..." alt="..."> -->
+               <div class="carousel-caption d-none d-md-block">
+                 <!-- <h5>Inscribete</h5> -->
+                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Clase gratis</button>
+               </div>
+            </div>
+
+            <div class="carousel-item">
+                 <img src="img/GMAT.png" alt="" width="1920" height="640">
+                 <div class="carousel-caption d-none d-md-block">
+                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Clase gratis</button>
+                 </div>
+            </div>
+
+            <div class="carousel-item">
+                 <img src="img/DELF.png" alt="" width="1920" height="640">
+                 <div class="carousel-caption d-none d-md-block">
+                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Clase gratis</button>
+                 </div>
+            </div>
+
+            <div class="carousel-item">
+                 <img src="img/DALF.png" alt="" width="1920" height="640">
+                 <div class="carousel-caption d-none d-md-block">
+                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Clase gratis</button>
+                 </div>
+            </div>
+
+            <div class="carousel-item">
+                 <img src="img/CILS.png" alt="" width="1920" height="640">
+                 <div class="carousel-caption d-none d-md-block">
+                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Clase gratis</button>
+                 </div>
+            </div>
+
+            <div class="carousel-item">
+                 <img src="img/CELPE.png" alt="" width="1920" height="640">
+                 <div class="carousel-caption d-none d-md-block">
+                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Clase gratis</button>
+                 </div>
+            </div>
+
+            <div class="carousel-item">
+                 <img src="img/DaF.png" alt="" width="1920" height="640">
+                 <div class="carousel-caption d-none d-md-block">
+                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Clase gratis</button>
+                 </div>
+            </div>
+
+            </div>
+            <!--Controles NEXT y PREV-->
+            <a class="carousel-control-prev" href="#carousel1" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carousel1" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+            <!--Controles de indicadores-->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel1" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel1" data-slide-to="1"></li>
+                <li data-target="#carousel1" data-slide-to="2"></li>
+                <li data-target="#carousel1" data-slide-to="3"></li>
+                <li data-target="#carousel1" data-slide-to="4"></li>
+                <li data-target="#carousel1" data-slide-to="5"></li>
+                <li data-target="#carousel1" data-slide-to="6"></li>
+                <li data-target="#carousel1" data-slide-to="7"></li>
+                <li data-target="#carousel1" data-slide-to="8"></li>
+            </ol>
+
+        </div>
+
+        <!--Sección para describir por qué estudiar con nosotros-->
+        <section class="about py-lg-5 py-md-5 py-5">
+          <div class="container">
+          <!-- <div class="inner-sec-w3pvt py-lg-5 py-3"> -->
+              <div class="container">
+                <a name= "Quienes som">
+                  <br>
+                <h1 class="tittle text-center mb-lg-5 mb-3 px-lg-5"></a> Prepárate <b> Certifícate</b></h1>
+              </div>
+
+              <div class="container">
+                <div class="container text-center">
+                  <h4> <b>NATIVO</b> esta conformado por un equipo de profesionales apasionados de los idiomas; creemos en un futuro brillante lleno posibilidades; aquellos que sean capaces de dominar
+                     un nuevo idioma serán capaces de abrir las puertas de las mejores oportunidades. Nos caracterizamos por altos estandares y niveles de servicio que ofrecemos a nuestros alumnos <br> <br> Nuestra misión es poner a disposición de cualquier persona
+                     toda nuestra experiencia y conocimientos con los mejores estandares de calidad, para que nuestros alumnos puedan comunicarse de manera eficiente además de prepararse y obtener certificados de validación internacional en el idioma de su elección, ¡inscribéte nosotros te ayudamos! </h4>
+                </div>
+              </div>
+         </section>
+        <!-- //Courses section --->
+      <section>
+        <div class="container">
+            <hr>
+            <h1>[Cursos Disponibles]</h1>
+            <hr>
+
+            <!-- <style>
+            .contenedor {
+              width: 1150px;
+              border:solid 10px #000;
+            }
+            </style> -->
+            <div class="modal-content">
+              <div> <img class="img-fluid"src="img/Promo.png" alt=width="1920" height="320"> </div>
+            </div>
+
+              <br>
+              <br>
+      </div>
+    </section>
+
+
+                  <br>
+                  <!--Cursos-->
+                  <a name= "cursos">
+      <section>
+      <div class="container">
+      <div class="card-deck">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="img/USA.png" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title"><b>INGLES</b></h5>
+              <p class="card-text">El ingles es considerado el idioma más importante del mundo. El idioma de los negocios, de relaciones internacionales y profesionales.
+                ¡No te quedes fuera e inicia tu camino en el idioma que te abrira las puertas del mundo!</p>
+
+              <!-- SwiftUI es una forma innovadora y excepcionalmente sencilla de crear interfaces de usuario en todas las plataformas de Apple con el poder de Swift. Cree interfaces de usuario para cualquier dispositivo Apple utilizando un solo conjunto de herramientas y API. Con una sintaxis declarativa de Swift que es fácil de leer y natural de escribir, SwiftUI funciona a la perfección con las nuevas herramientas de diseño de Xcode para mantener su código y diseño perfectamente sincronizados. La compatibilidad automática con Dynamic Type, Dark Mode, localización y accesibilidad significa que su primera línea de código SwiftUI ya es el código de IU más poderoso que haya escrito. -->
+              <p class="card-text"><strong>Iniciamos enero 25</strong></p>
+              <br>
+              <!-- <a href="#" class="btn btn-primary btn-block">Saber más</a> -->
+              <a<button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"></button>Clase muestra gratis</a>
+
+            </div>
+          </div>
+
+          <div class="card">
+            <img class="card-img-top img-fluid" src="img/Alemania.png" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title"><b>ALEMAN</b></h5>
+              <p class="card-text">El aleman es uno de los idiomas oficiales de la union europea. Estás en el ramo de la investigación de las ciencias o de la ingeniería,
+                potencializalo con el alemán, obtén innumerables oportunidades de desarrollo profesional.  ¡Inscribete!</p>
+              <p class="card-text"><strong>Inicia enero 23</strong></p>
+              <br>
+              <!-- <a href="#" class="btn btn-primary btn-block">Saber más</a> -->
+              <a<button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"></button>Clase muestra gratis</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <img class="card-img-top img-fluid" src="img/Italiano.png" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title"><b>ITALIANO</b></h5>
+              <p class="card-text">El Italiano; El idioma del arte, la pintura, la arquitectura, la cocina. La lengua de los artistas de los poetas de los filosofos, expande tu mundo cultural,
+                aprende una de los idiomas más hermosos del planeta y vive un pedazo de la mitica Italia.</p>
+              <p class="card-text"><strong>Inicia enero 23</strong></p>
+              <br>
+              <!-- <a href="#" class="btn btn-primary btn-block">Saber más</a> -->
+              <a<button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"></button>Clase muestra gratis</a>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <div class="container">
+        <h1></h1>
+        <hr>
+
+      <div class="card-deck">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="img/Francia.png" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title"><b>FRANCES</b></h5>
+              <p class="card-text">El Francés es una de las lenguas oficiales de la ONU, lengua romance extendida a lo largo de todo el mundo, estudiada por su belleza, fonética, cultura, artes,
+                humanidades sin duda una de los idiomas mas hermosos del mundo.</p>
+              <p class="card-text"><strong>Inicia enero 19</strong></p>
+              <br>
+              <!-- <a href="#" class="btn btn-primary btn-block">Saber más</a> -->
+              <a<button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"></button>Clase muestra gratis</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <img class="card-img-top img-fluid" src="img/Portugues.png" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title"><b>PORTUGUES</b></h5>
+              <p class="card-text">El portugués se ha convertido en la lengua mas estudiada en los ultimos años, debido al auge economico que ha experimentado
+                Brasil, hipanoparlantes han encontrado oportunidades de crecimiento profesional en el idioma.</p>
+              <p class="card-text"><strong>Inicia enero 25</strong></p>
+              <br>
+              <!-- <a href="#" class="btn btn-primary btn-block">Saber más</a> -->
+              <a<button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"></button>Clase muestra gratis</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <img class="card-img-top img-fluid" src="img/USA2.png" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title"><b>INGLES</b></h5>
+              <p class="card-text">El ingles es considerado el idioma más importante del mundo. El idioma de los negocios, de relaciones internacionales y profesionales.
+                ¡No te quedes fuera e inicia tu camino en el idioma que te abrira las puertas del mundo!</p>
+              <p class="card-text"><strong>Inicia febrero 24</strong></p>
+              <br>
+              <!-- <a href="#" class="btn btn-primary btn-block">Saber más</a> -->
+              <a<button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"></button>Clase muestra gratis</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      </section>
+        <br>
+
+
+<!-- Section Certifications -->
+        <section>
+          <div class="container">
+              <br>
+              <hr>
+              <h1>[Certificaciones Disponibles]</h1>
+              <hr>
+
+              <!-- <style>
+              .contenedor {
+                width: 1150px;
+                border:solid 10px #000;
+              }
+              </style> -->
+              <div class="modal-content">
+                <div> <img class="img-fluid"src="img/Promo.png" alt=width="1920" height="320"> </div>
+              </div>
+
+                <br>
+                <br>
+        </div>
+      </section>
+
+      <!-- Meses sin intereses section -->
+      <style>
+      .contenedor {
+        width: 500px;
+        border:solid 0px #000;
+      }
+      .img-ts {
+        width: 300px;
+        height: 300px;
+      }
+      </style>
+
+      <div class="container">
+        <div class="contenedor mx-auto d-block">
+          <img class="img-fluid" src="img/MesesSinIntereses.png" alt="" class="img-ts rounded mx-auto d-block">
+        </div>
+      </div>
+
+      <div class="container">
+        <h1></h1>
+        <hr>
+        <br>
+
+
+        <!-- Collapse acordion -->
+        <a name= "FAQ">
+    <h1 class="text-center"><b>Preguntas frecuentes</b></h1>
+
+    <div class="accordion" id="accordionExample">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h2 class="mb-0">
+            <button class="btn btn" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              <b>¿Cual es nuestro método?</b>
+            </button>
+          </h2>
+        </div>
+
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+          <div class="card-body">
+            NATIVO propone una forma concisa y solida de aprendizaje estructurado/acelerando, con un plan de estudios desarrollado con puntos de control gramaticales, practicarás el idioma en talleres y actividades de conversación extra clase,
+            obtendrás bases solidas y fundamentales en el aprendizaje del idioma, con un limite maximo de 10 personas por grupo nos asegurarémos que tengas una atención completamente personalizada.
+            nada es improvisado, siempre estructurado y con los mas altos estandares de calidad.
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header" id="headingTwo">
+          <h2 class="mb-0">
+            <button class="btn btn" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              <strong>¿Qué beneficios obtengo al tomar algun curso?</strong>
+            </button>
+          </h2>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+          <div class="card-body">
+            Obtendrás una formación de excelencia siempre enfocada en obtener una certificación, obtendrás competencias para poder comunicarte a un nivel avanzado.
+            hablar, escribir, escuchar y leer adémas al termino del curso estar listo para obtener tu certificación.
+          </div>
+        </div>
+      </div>
+
+
+      <div class="card">
+        <div class="card-header" id="headingThree">
+          <h2 class="mb-0">
+            <button class="btn btn" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              <strong>¿Requiero de conocimientos previos para tomar algun curso?</strong>
+            </button>
+          </h2>
+        </div>
+        <!-- class="collapse show"  -->
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+          <div class="card-body">
+            No, Contamos con cursos de formación basicos. Sí ya cuentas con conocimientos realizamos una evalución
+            para conocer tu nivel. ¿Estás interesado en una certificación? deberás de contar con un nivel avanzado del idioma.
+          </div>
+        </div>
+      </div>
+
+
+      <div class="card">
+        <div class="card-header" id="headingFour">
+          <h2 class="mb-0">
+            <button class="btn btn" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+              <strong>¿Obtendré algún certificado al termino del curso?</strong>
+            </button>
+          </h2>
+        </div>
+        <!-- class="collapse show"  -->
+        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+          <div class="card-body">
+            Sí, te entregaremos un diploma con valor curricular que validará tus conocimientos y horas invertidas en el programa por parte de la empresa.
+            además de contar con todos los conocimientos para realizar tu examén de certificación internacional
+          </div>
+        </div>
+      </div>
+
+
+      <div class="card">
+        <div class="card-header" id="headingFive">
+          <h2 class="mb-0">
+            <button class="btn btn" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+              <strong>¿Como puedo pagar el curso?</strong>
+            </button>
+          </h2>
+        </div>
+        <!-- class="collapse show"  -->
+        <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+          <div class="card-body">
+            Cuentas con las siguientes formas de pago; deposito bancario, con TDC directamente en terminal a meses sin intereses, o en efectivo. todos los precios incluyen IVA. En caso de contar con alguna promoción vigente, se te aplicará al momento del pago.
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header" id="headingSix">
+          <h2 class="mb-0">
+            <button class="btn btn" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+              <strong>¿Qué tengo que hacer una vez que pague el curso?</strong>
+            </button>
+          </h2>
+        </div>
+        <!-- class="collapse show"  -->
+        <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+          <div class="card-body">
+            Tendrás que enviar la evidencia de pago ya que esta servira como tu comprobante de inscripción, nosotros nos pondrémos en contacto contigo para inidicarte el día inicio del curso.
+            utilizaremos Zoom como herramienta para conectarnos, pero no es obligatorio, podrás ponerte de acuerdo con tu maestro para contar con libre elección, lo unico que necesitaremos adicionalmente
+            será un libro que deberás comprar por tu cuenta, al inicio del curso se te indicará el titulo del mismo. con esto estarás listo para iniciar el curso.
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header" id="headingTen">
+          <h2 class="mb-0">
+            <button class="btn btn" type="button" data-toggle="collapse" data-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+              <strong>¿Necesito algún equipo especial para tomar clase?</strong>
+            </button>
+          </h2>
+        </div>
+        <!-- class="collapse show"  -->
+        <div id="collapseTen" class="collapse" aria-labelledby="headingTen" data-parent="#accordionExample">
+          <div class="card-body">
+            Sí, necesitas contar con tu propio equipo de computo con las herramientas necesarias previo inicio del curso.
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="card">
+        <div class="card-header" id="headingEleven">
+          <h2 class="mb-0">
+            <button class="btn btn" type="button" data-toggle="collapse" data-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
+              <strong>¿Qué pasa si en mi calendario de estudio coincide un dia feriado?</strong>
+            </button>
+          </h2>
+        </div>
+        <!-- class="collapse show"  -->
+        <div id="collapseEleven" class="collapse" aria-labelledby="headingEleven" data-parent="#accordionExample">
+          <div class="card-body">
+            En caso de que la clase coincida en un dia feriado o inhabil, se repondrá en común acuerdo con el profesor y la clase. Ninguna clase se pierde, el tiempo se cumple acorde a las horas establecidas.
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header" id="headingTwelve">
+          <h2 class="mb-0">
+            <button class="btn btn" type="button" data-toggle="collapse" data-target="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">
+              <strong>¿Qué pasa si falto?</strong>
+            </button>
+          </h2>
+        </div>
+        <!-- class="collapse show"  -->
+        <div id="collapseTwelve" class="collapse" aria-labelledby="headingTwelve" data-parent="#accordionExample">
+          <div class="card-body">
+            Tienes derecho a faltar por causas justificadas, la clase se repondra y te deberás de poner de acuerdo con el instructor, te recomendamos solo tomar esta opción si es necesario.
+          </div>
+        </div>
+      </div>
+
+
+      <div class="card">
+        <div class="card-header" id="headingThirdteen">
+          <h2 class="mb-0">
+            <button class="btn btn" type="button" data-toggle="collapse" data-target="#collapseThirdteen" aria-expanded="false" aria-controls="collapseThirdteen">
+              <strong>¿Dónde se imparten los cursos?</strong>
+            </button>
+          </h2>
+        </div>
+        <!-- class="collapse show"  -->
+        <div id="collapseThirdteen" class="collapse" aria-labelledby="headingThirdteen" data-parent="#accordionExample">
+          <div class="card-body">
+            Los cursos se imparten 100% en linea a través de la plataforma zoom.
+            Debido a la temporada de COVID actualmente solo contamos con cursos a distancia una vez que las condiciones sean adecuadas adecuaremos clases en modalidad mixta.
+          </div>
+        </div>
+      </div>
+
+
+      <div class="card">
+        <div class="card-header" id="headingfourteen">
+          <h2 class="mb-0">
+            <button class="btn btn" type="button" data-toggle="collapse" data-target="#collapseFourteen" aria-expanded="false" aria-controls="collapseFourteen">
+              <strong>¿Cúal es el costo de los cursos?</strong>
+            </button>
+          </h2>
+        </div>
+        <!-- class="collapse show"  -->
+        <div id="collapseFourteen" class="collapse" aria-labelledby="headingFourteen" data-parent="#accordionExample">
+          <div class="card-body">
+            El costo de cursos online de cualquier idioma, es de 1,600 por mes mas IVA. no incluye material de apoyo, ese corre por parte del alumno.
+          </div>
+        </div>
+      </div>
+
+
+      <div class="card">
+        <div class="card-header" id="headingFiveteen">
+          <h2 class="mb-0">
+            <button class="btn btn" type="button" data-toggle="collapse" data-target="#collapseFiveteen" aria-expanded="false" aria-controls="collapseFiveteen">
+              <strong>¿Cúal es el costo de las certificaciones?</strong>
+            </button>
+          </h2>
+        </div>
+        <!-- class="collapse show"  -->
+        <div id="collapseFiveteen" class="collapse" aria-labelledby="headingFiveteen" data-parent="#accordionExample">
+          <div class="card-body">
+            El costo de las certificaciones varia dependiendo el idioma de elección y tipo de certificado, envianos un mensaje te respondemos con todos los detalles. recuerda que los costos no incluye material de apoyo ese corre por parte del alumno.
+          </div>
+        </div>
+      </div>
+
+
+      <div class="card">
+        <div class="card-header" id="headingSixteen">
+          <h2 class="mb-0">
+            <button class="btn btn" type="button" data-toggle="collapse" data-target="#collapseSixteen" aria-expanded="false" aria-controls="collapseSixteen">
+              <strong>¿Cúantos niveles tienen los cursos?</strong>
+            </button>
+          </h2>
+        </div>
+        <!-- class="collapse show"  -->
+        <div id="collapseSixteen" class="collapse" aria-labelledby="headingSixteen" data-parent="#accordionExample">
+          <div class="card-body">
+            Los cursos contan de 12 niveles divididos en trés bloques; basico, intermedio y avanzado, para mayor información envianos un mensaje y te responderemos con información a detalle.
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header" id="headingSevenTeen">
+          <h2 class="mb-0">
+            <button class="btn btn" type="button" data-toggle="collapse" data-target="#collapseSevenTeen" aria-expanded="false" aria-controls="collapseSevenTeen">
+              <strong>¿Cúal es la duración de los cursos para certificarse?</strong>
+            </button>
+          </h2>
+        </div>
+        <!-- class="collapse show"  -->
+        <div id="collapseSevenTeen" class="collapse" aria-labelledby="headingSevenTeen" data-parent="#accordionExample">
+          <div class="card-body">
+          Un aproximado de 78 horas (2 meses) adémas de exámenes piloto. Esto puede variar dependiendo del tipo de certificación e idioma, te recomendamos nos envies un mensaje donde nos describas que tipo de certificacion necesitas y nosotros te respondemos con todo el detalle.
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+        <!--/contact -->
+          <hr>
+        <section class="ab-info-main py-md-5 py-5">
+          <a name= "contacto">
+            <div class="container">
+                <div class="inner-sec-w3pvt py-lg-5">
+                    <h1 class="tittle text-center mb-lg-5 mb-3 inner-tittle"><span class="sub-tittle">Contactanos</span></h1>
+                    <h4 class="text-center px-lg-5" >Somos un grupo de expertos en la enseñanza de los idiomas, orgullosos de contar con el mejor metodo de aprendizaje y los mejores planes de estudio, nos sentimos orgullosos de ayudar a nuestros clientes a alcanzar sus metas en el menor tiempo posible. Aprender para el futuro es una inversión para toda la vida </h4>
+                    <div class="contact-form mt-md-5">
+                        <div class="contact-form-inner mx-auto text-left">
+                            <form name="contactform " id="contactform" action="#">
+                                <div class="row">
+                                    <div class="col-lg-6 con-gd">
+                                        <div class="form-group">
+                                            <label>Nombre</label>
+                                            <input type="text" id="contactName" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Correo</label>
+                                            <input type="text" id="contactMail" class="form-control">
+                                        </div>
+
+                                    </div>
+                                    <div class="col-lg-6 con-gd">
+
+                                        <div class="form-group">
+                                            <label>Telefono</label>
+                                            <input type="text" id="contactPhone" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Mensaje</label>
+                                    <textarea id="contactMessage" class="form-control" placeholder="Ejemplo: ¿Podrían llamarme?, estoy interesado en..."></textarea>
+                                </div>
+                                <!-- <button type="submit" class="btn btn-primary">Enviar</button> -->
+                                <button type="button" class="btn btn-primary" id="submit" onclick="contacto()">Enviar</button>
+                            </form>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <!--//contact -->
+        <!-- <div class="col-lg-3 col-md-6 mt-lg-0 mt-5"> -->
+          <hr>
+            <div>
+                  <h3 class="mb-3 w3f_title">O si lo prefieres, llámanos</h3>
+                  <div class="fv3-contact">
+                      <span class="fa fa-envelope" aria-hidden="true"></span>
+                      <p>
+                          <a href="mailto:example@email.com">info@móviles.com</a>
+                      </p>
+                  </div>
+                  <div class="fv3-contact my-2">
+                      <span class="fa fa-phone-square" aria-hidden="true"></span>
+                      <p>+52 55 6708 5507</p>
+                  </div>
+                  <div class="fv3-contact">
+                      <span class="fa fa-building" aria-hidden="true"></span>
+                      <p>Oficinas centrales
+                          <br>Gomez Farías, Coyoacan CDMX.</p>
+                  </div>
+              </div>
+              <br>
+
+  <!-- copyright -->
+  <div class="cpy-right text-center">
+      <p>© 2018 Móviles. Todos los derechos reservados</p>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"> </script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+
+
+    <!-- <script src="app.js"> </script> -->
+    <!-- <script src="app.js" charset="utf-8"></script> -->
+
+    <!-- <script>
+        $('.carousel').carousel();
+    </script> -->
+
+  </body>
+
+
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+       https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
+  <!-- Firestore -->
+  <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+    // Initialize Cloud Firestore through Firebase
+    firebase.initializeApp({
+      apiKey: "AIzaSyDIwov1FoYIW5JAYzgUVrwWkKr6I8C5xTY",
+      authDomain: "webpage-5b958.firebaseapp.com",
+      projectId: "webpage-5b958",
+      storageBucket: "webpage-5b958.appspot.com",
+      messagingSenderId: "312437922085",
+      appId: "1:312437922085:web:121f1f182aaeba7bdfe2cc",
+      measurementId: "G-ZFDM0P32E2"
+  });
+
+  var db = firebase.firestore();
+
+    //Agregar documentos
+
+
+    function enviar(){
+      var name = document.getElementById('name').value;
+      var mail = document.getElementById('mail').value;
+      var phone = document.getElementById('phone').value;
+      var message = document.getElementById('message').value;
+
+        db.collection("users").add({
+        nombre: name,
+        email: mail,
+        phoneNumber: phone,
+        message: message
+      })
+      .then(function(docRef) {
+        console.log("Document written with ID: ", docRef.id);
+        var name = document.getElementById('name').value = "";
+        var mail = document.getElementById('mail').value = "";
+        var phone = document.getElementById('phone').value = "";
+        var message = document.getElementById('message').value = "";
+      })
+      .catch(function(error) {
+        console.error("Error adding document: ", error);
+      });
+    }
+
+    //Formato Contacto
+    function contacto(){
+      var nombre = document.getElementById('contactName').value;
+      var telefono = document.getElementById('contactMail').value;
+      var correo = document.getElementById('contactMessage').value;
+      var mensaje = document.getElementById('contactPhone').value;
+
+        db.collection("contact").add({
+        name: nombre,
+        phone: telefono,
+        email: correo,
+        message: mensaje
+      })
+      .then(function(docRef) {
+        console.log("Document written with ID: ", docRef.id);
+        var nombre = document.getElementById('contactName').value = "";
+        var telefono = document.getElementById('contactMail').value = "";
+        var correo = document.getElementById('contactMessage').value = "";
+        var mensaje = document.getElementById('contactPhone').value = "";
+      })
+      .catch(function(error) {
+        console.error("Error adding document: ", error);
+      });
+    }
+
+    // var firebaseConfig = {
+    //   apiKey: "AIzaSyDIwov1FoYIW5JAYzgUVrwWkKr6I8C5xTY",
+    //   authDomain: "webpage-5b958.firebaseapp.com",
+    //   projectId: "webpage-5b958",
+    //   storageBucket: "webpage-5b958.appspot.com",
+    //   messagingSenderId: "312437922085",
+    //   appId: "1:312437922085:web:121f1f182aaeba7bdfe2cc",
+    //   measurementId: "G-ZFDM0P32E2"
+    // };
+    // Initialize Firebase
+    // firebase.analytics();
+
+
+
+  </script>
+
+</html>
